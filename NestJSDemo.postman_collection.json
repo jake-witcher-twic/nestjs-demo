@@ -1,0 +1,87 @@
+{
+	"info": {
+		"_postman_id": "bc6b87ab-cf9b-40f9-95aa-f9fedf14740e",
+		"name": "NestJS Demo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Employee",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-auth-token",
+						"value": "admin-auth-token",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/v1/employees/1eda74dc-5951-48c6-88c6-fc28047affce",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"employees",
+						"1eda74dc-5951-48c6-88c6-fc28047affce"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Employee Unauthorized",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-auth-token",
+						"value": "member-auth-token",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/v1/employees/1eda74dc-5951-48c6-88c6-fc28047affce",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"employees",
+						"1eda74dc-5951-48c6-88c6-fc28047affce"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Employee Invalid",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-auth-token",
+						"value": "admin-auth-token",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/v1/employees/not-a-uuid",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"employees",
+						"not-a-uuid"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
